@@ -3,14 +3,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title></title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-    })
-  </script>
 </head>
 
 <body>
   <h1>Welcome to QuotingDojo</h1>
+  <% for ( i in errors ){ %>
+  <p><%= errors[i] %></p>
+  <% } %>
   <form action="/quotes" method="post">
     <label>Your Name:</label>
     <input type="text" name="name"> 

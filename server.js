@@ -14,8 +14,10 @@ var QoutesSchema = new mongoose.Schema({
   created_at: { type: Date, default: Date.now }
 })
 
-var Quotes = mongoose.model('Quotes', QoutesSchema)
+QoutesSchema.path('name').required(true, 'Name cannot be blank');
+QoutesSchema.path('quote').required(true, 'Quote cannot be blank');
 
+var Quotes = mongoose.model('Quotes', QoutesSchema)
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "./static")));
