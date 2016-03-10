@@ -1,0 +1,19 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title></title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+    })
+  </script>
+</head>
+
+<body>
+  <h1>Here are the awesome quotes!</h1>
+  <% for(var i in quotes) { %>
+  <p>"<%= quotes[i].quote.trim() %>"</p>
+  <p>-<%= quotes[i].name %> at <%= quotes[i].created_at%></p>
+  <% } %>
+</body>
+</html>
